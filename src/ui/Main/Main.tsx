@@ -1,10 +1,11 @@
+import Cart from "../../features/cart/Cart";
 import Pizza from "../../features/Pizza/Pizza";
-import styles from "./Main.module.css";
 
 function Main() {
   return (
-    <main className={styles.main}>
+    <main>
       <Pizza />
+      <Cart />
     </main>
   );
 }

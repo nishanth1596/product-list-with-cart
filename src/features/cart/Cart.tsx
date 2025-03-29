@@ -1,19 +1,23 @@
 import styles from "./Cart.module.css";
-import emptyCartImg from "../../assets/images/illustration-empty-cart.svg";
+
+import { useSelector } from "react-redux";
+import { getCartData } from "./cartSlice";
+import CartOverview from "./CartOverview/CartOverview";
+import EmptyCart from "./EmptyCart/EmptyCart";
 
 function Cart() {
+  const cartdata = useSelector(getCartData);
+
   return (
     <section className={styles.container}>
       <h3 className={styles.h3}>Your Cart (X)</h3>
 
       <article>
-        <div className={styles.emptyCart}>
-          <img
-            src={emptyCartImg}
-            alt="A cake representing no cart right currently"
-          />
-          <p>Your added items will appear here</p>
-        </div>
+        {cartdata.length > 0 ? (
+          <CartOverview cartItems={cartdata} />
+        ) : (
+          <EmptyCart />
+        )}
       </article>
     </section>
   );

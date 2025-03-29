@@ -8,16 +8,3 @@
   padding: var(--spacing-300);
   color: var(--color-red);
 }
-
-.emptyCart {
-  padding: var(--spacing-200);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  font-size: var(--font-size-preset4);
-  font-weight: var(--font-weight-preset4-bold);
-  line-height: var(--line-height-preset4);
-  color: var(--color-rose-500);
-}

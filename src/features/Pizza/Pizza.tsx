@@ -26,18 +26,22 @@ function Pizza() {
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <section className={styles.container}>
-      {pizzasData.map((pizza: PizzaMapProps) => (
-        <PizzaItem
-          name={pizza.name}
-          category={pizza.category}
-          mobileImg={pizza.image.mobile}
-          tabletImg={pizza.image.tablet}
-          desktopImg={pizza.image.desktop}
-          price={pizza.price}
-          key={pizza.name}
-        />
-      ))}
+    <section>
+      <h2 className={styles.h2}>Desserts</h2>
+
+      <div className={styles.container}>
+        {pizzasData.map((pizza: PizzaMapProps) => (
+          <PizzaItem
+            name={pizza.name}
+            category={pizza.category}
+            mobileImg={pizza.image.mobile}
+            tabletImg={pizza.image.tablet}
+            desktopImg={pizza.image.desktop}
+            price={pizza.price}
+            key={pizza.name}
+          />
+        ))}
+      </div>
     </section>
   );
 }

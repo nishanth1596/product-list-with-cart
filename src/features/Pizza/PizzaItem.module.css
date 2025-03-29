@@ -1,3 +1,10 @@
+.picture,
+.category,
+.name,
+.price {
+  padding-inline: var(--spacing-300);
+}
+
 .picture {
   position: relative;
 }

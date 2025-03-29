@@ -19,8 +19,8 @@ function PizzaItem({
   price,
 }: PizzaItemProps) {
   return (
-    <article className="">
-      <picture className={styles.picture}>
+    <article>
+      <picture>
         <source media="(max-width: 767px)" srcSet={mobileImg} />
         <source
           media="(min-width: 768px) and (max-width: 1023px)"
@@ -28,8 +28,10 @@ function PizzaItem({
         />
         <source media="(min-width: 1024px)" srcSet={desktopImg} />
 
-        <img src={mobileImg} alt={name} className={styles.img} />
-        <CartButton />
+        <div className={styles.picture}>
+          <img src={mobileImg} alt={name} className={styles.img} />
+          <CartButton />
+        </div>
       </picture>
 
       <p className={styles.category}>{category}</p>

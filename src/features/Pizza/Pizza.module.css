@@ -1,3 +1,11 @@
+.h2 {
+  font-size: var(--font-size-preset1);
+  font-weight: var(--font-weight-preset1);
+  line-height: var(--line-height-preset1);
+  color: var(--color-rose-900);
+  margin: var(--spacing-300);
+}
+
 .container {
   margin-top: var(--spacing-400);
   display: flex;

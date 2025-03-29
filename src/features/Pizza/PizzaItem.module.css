@@ -1,0 +1,32 @@
+.picture {
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  border-radius: var(--spacing-100);
+}
+
+.category {
+  font-size: var(--font-size-preset4);
+  font-weight: var(--font-weight-preset4);
+  line-height: var(--line-height-preset4);
+  color: var(--color-rose-500);
+  margin-top: 38px;
+}
+
+.name,
+.price {
+  margin-top: var(--spacing-50);
+  font-size: var(--font-size-preset3);
+  font-weight: var(--font-weight-preset3);
+  line-height: var(--line-height-preset3);
+}
+
+.name {
+  color: var(--color-rose-900);
+}
+
+.price {
+  color: var(--color-red);
+}

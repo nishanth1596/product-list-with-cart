@@ -1,0 +1,22 @@
+.button {
+  padding: 12px 28px;
+  border-radius: 100px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-rose-400);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(50%, 50%);
+}
+
+.span {
+  display: block;
+  font-size: var(--font-size-preset4);
+  font-weight: var(--font-weight-preset4-bold);
+  line-height: var(--line-height-preset4);
+}

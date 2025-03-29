@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import styles from "./Pizza.module.css";
 import PizzaItem from "./PizzaItem";
 import { fetchPizzaData } from "../../services/apiPizzas";
+import LoadingSpinner from "../../ui/LoadingSpinner/LoadingSpinner";
 
 type PizzaMapImageProps = {
   mobile: string;
@@ -17,27 +18,16 @@ export type PizzaMapProps = {
 };
 
 function Pizza() {
-  const {
-    data: pizzasData,
-    isLoading,
-    error,
-  } = useQuery({
+  const { data: pizzasData, isLoading } = useQuery({
     queryKey: ["pizza"],
     queryFn: fetchPizzaData,
   });
 
-  return (
-    <section className="">
-      {/* test */}
-      {/* <PizzaItem
-        img="image-waffle-mobile.jpg"
-        category="Waffle"
-        name="Waffle with Berries"
-        price={6.5}
-      /> */}
-      {/* test */}
+  if (isLoading) return <LoadingSpinner />;
 
-      {pizzasData?.map((pizza: PizzaMapProps) => (
+  return (
+    <section className={styles.container}>
+      {pizzasData.map((pizza: PizzaMapProps) => (
         <PizzaItem
           name={pizza.name}
           category={pizza.category}
@@ -53,7 +43,3 @@ function Pizza() {
 }
 
 export default Pizza;
-// Waffle with Berries
-//
-// 6.50
-// Add to Cart

@@ -1,10 +1,10 @@
 import Cart from "../../features/cart/Cart";
-import Pizza from "../../features/Pizza/Pizza";
+import Menu from "../../features/Menu/Menu";
 
 function Main() {
   return (
     <main>
-      <Pizza />
+      <Menu />
       <Cart />
     </main>
   );

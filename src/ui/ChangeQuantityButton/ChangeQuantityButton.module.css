@@ -1,0 +1,30 @@
+.container {
+  padding: var(--spacing-150);
+  border-radius: 100px;
+  background-color: var(--color-red);
+  border: none;
+
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.btnDecrease,
+.btnIncrease {
+  border: none;
+  background-color: var(--color-red);
+  border: 2px solid white;
+  border-radius: 100%;
+}
+
+.value {
+  font-size: var(--font-size-preset4);
+  font-weight: var(--font-weight-preset4-bold);
+  line-height: var(--line-height-preset4);
+  color: var(--color-white);
+}

@@ -1,29 +1,52 @@
-import CartOverviewItem from "../cartOverviewItem/CartOverviewItem";
+import { CartItem, deleteItem } from "../cartSlice";
+import styles from "./CartOverview.module.css";
+import carbonNeutralIcon from "../../../assets/images/icon-carbon-neutral.svg";
 
-type FullCartItem = {
-  name: string;
-  quantity: number;
-  totalPrice: number;
-  unitPrice: number;
-};
+import CartOverviewItem from "../cartOverviewItem/CartOverviewItem";
+import { useDispatch } from "react-redux";
 
 type CartOverviewProps = {
-  cartItems: FullCartItem[];
+  cartItems: CartItem[];
+  amount: string;
 };
 
-function CartOverview({ cartItems }: CartOverviewProps) {
+function CartOverview({ cartItems, amount }: CartOverviewProps) {
+  const dispatch = useDispatch();
+
+  function handleDeleteItem(name: string) {
+    dispatch(deleteItem(name));
+  }
+
   return (
-    <div className="">
+    <>
       {cartItems.map((cart) => (
         <CartOverviewItem
           name={cart.name}
           quantity={cart.quantity}
-          totalPrice={cart.totalPrice}
+          unitTotalPrice={cart.unitTotalPrice}
           unitPrice={cart.unitPrice}
           key={cart.name}
+          onDelete={handleDeleteItem}
         />
       ))}
-    </div>
+
+      <h4 className={styles.h4}>
+        Order Total <span className={styles.span}>&#36;{amount}</span>
+      </h4>
+
+      <div className={styles.carbonNeutral} role="note">
+        <img
+          src={carbonNeutralIcon}
+          alt="Carbon Neutral Icon"
+          aria-hidden="true"
+        />
+        <p className={styles.p}>
+          This is a <span className={styles.bold}>carbon-neutral</span> delivery
+        </p>
+      </div>
+
+      <button className={styles.btn}>Confirm Order</button>
+    </>
   );
 }
 

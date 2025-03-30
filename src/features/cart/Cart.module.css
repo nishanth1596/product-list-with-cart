@@ -8,3 +8,8 @@
   padding: var(--spacing-300);
   color: var(--color-red);
 }
+
+.article {
+  padding-inline: var(--spacing-300);
+  padding-bottom: var(--spacing-300);
+}

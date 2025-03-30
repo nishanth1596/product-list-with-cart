@@ -2,19 +2,21 @@ import styles from "./CartOverviewItem.module.css";
 
 import deleteIcon from "../../../assets/images/icon-remove-item.svg";
 
-type CartOverviewItemProps = {
+type CartOverviewItem = {
   name: string;
   quantity: number;
   unitPrice: number;
-  totalPrice: number;
+  unitTotalPrice: number;
+  onDelete: (name: string) => void;
 };
 
 function CartOverviewItem({
   name,
   quantity,
   unitPrice,
-  totalPrice,
-}: CartOverviewItemProps) {
+  unitTotalPrice,
+  onDelete,
+}: CartOverviewItem) {
   return (
     <div className={styles.container}>
       <div>
@@ -22,13 +24,14 @@ function CartOverviewItem({
         <p className={styles.p}>
           <span className={styles.quantity}>{quantity}x</span>
           <span className={styles.unitPrice}>@ {unitPrice}</span>
-          <span className={styles.totalPrice}>{totalPrice}</span>
+          <span className={styles.totalPrice}>{unitTotalPrice}</span>
         </p>
       </div>
 
       <button
         aria-label="Click to delete this item from the cart"
         className={styles.btn}
+        onClick={() => onDelete(name)}
       >
         <img src={deleteIcon} alt="" />
       </button>

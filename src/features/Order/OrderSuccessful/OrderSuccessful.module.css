@@ -2,13 +2,17 @@
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .orderConfirmation {
   margin-top: 95px;
   background-color: var(--color-white);
-  height: 85vh;
-  overflow: scroll;
+  max-height: 85vh;
+  overflow: auto;
   border-top-left-radius: var(--spacing-150);
   border-top-right-radius: var(--spacing-150);
   padding: var(--spacing-500) var(--spacing-300) var(--spacing-300)
@@ -45,4 +49,20 @@
   font-size: var(--font-size-preset3);
   font-weight: var(--font-size-preset3);
   line-height: var(--line-height-preset3);
+}
+
+@media (min-width: 49rem) {
+  .container {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--spacing-150);
+  }
+
+  .orderConfirmation {
+    margin-inline: auto;
+    width: calc(100% - 80px);
+    max-width: 43rem;
+    height: auto;
+  }
 }

@@ -30,3 +30,15 @@
     margin-inline: var(--spacing-500);
   }
 }
+
+@media (min-width: 80rem) {
+  .h2 {
+    margin-inline: 0;
+    margin-top: 88px;
+  }
+
+  .container {
+    margin-inline: 0;
+    margin-top: 0px;
+  }
+}

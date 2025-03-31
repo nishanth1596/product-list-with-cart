@@ -13,6 +13,14 @@
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover,
+.button:active {
+  color: var(--color-red);
+  border-color: var(--color-red);
 }
 
 .span {
@@ -20,4 +28,50 @@
   font-size: var(--font-size-preset4);
   font-weight: var(--font-weight-preset4-bold);
   line-height: var(--line-height-preset4);
+}
+
+:root {
+  /* Colors */
+  --color-red: #c73b0f;
+  --color-rose-900: #260f08;
+  --color-rose-500: #87635a;
+  --color-rose-400: #ad8a85;
+  --color-rose-300: #caafa7;
+  --color-rose-100: #f5eeec;
+  --color-rose-50: #fcf8f6;
+  --color-green: #1ea575;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-primary: "Red Hat Text", sans-serif;
+
+  /* Font Sizes & Line Heights */
+  --font-size-preset1: 2.5rem; /* 40px / 16 */
+  --line-height-preset1: 1.2;
+  --font-weight-preset1: 700; /* Bold */
+
+  --font-size-preset2: 1.5rem; /* 24px / 16 */
+  --line-height-preset2: 1.25;
+  --font-weight-preset2: 700; /* Bold */
+
+  --font-size-preset3: 1rem; /* 16px / 16 */
+  --line-height-preset3: 1.5;
+  --font-weight-preset3: 600; /* Semi-Bold */
+
+  --font-size-preset4: 0.875rem; /* 14px / 16 */
+  --line-height-preset4: 1.5;
+  --font-weight-preset4: 400; /* Regular */
+
+  --font-weight-preset4-bold: 600; /* Semi-Bold for bold variation */
+
+  /* Spacing */
+  --spacing-1100: 5.5rem; /* 88px / 16 */
+  --spacing-500: 2.5rem; /* 40px / 16 */
+  --spacing-400: 2rem; /* 32px / 16 */
+  --spacing-300: 1.5rem; /* 24px / 16 */
+  --spacing-200: 1rem; /* 16px / 16 */
+  --spacing-150: 0.75rem; /* 12px / 16 */
+  --spacing-100: 0.5rem; /* 8px / 16 */
+  --spacing-50: 0.25rem; /* 4px / 16 */
 }

@@ -16,10 +16,15 @@
 
 .btnDecrease,
 .btnIncrease {
+  cursor: pointer;
   border: none;
   background-color: var(--color-red);
   border: 2px solid white;
   border-radius: 100%;
+}
+
+.container:hover {
+  background-color: #982e0c;
 }
 
 .value {

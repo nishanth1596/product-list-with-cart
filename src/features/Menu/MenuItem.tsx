@@ -32,6 +32,8 @@ function MenuItem({ menuData, onAddToCart }: MenuItemProps) {
     dispatch(decreaseItemQuantity(name));
   }
 
+  const isItemAddedtoCart = cartData.some((item) => item.name === name);
+
   return (
     <article>
       <picture>
@@ -43,8 +45,13 @@ function MenuItem({ menuData, onAddToCart }: MenuItemProps) {
         <source media="(min-width: 1024px)" srcSet={desktopImg} />
 
         <div className={styles.picture}>
-          <img src={mobileImg} alt={name} className={styles.img} />
-          {cartData.find((item) => item.name === name) ? (
+          <img
+            src={mobileImg}
+            alt={name}
+            className={isItemAddedtoCart ? styles.activeImg : styles.img}
+          />
+
+          {isItemAddedtoCart ? (
             <ChangeQuantityButton
               name={name}
               onIncrease={handleIncreaseItemQuantity}
@@ -60,7 +67,7 @@ function MenuItem({ menuData, onAddToCart }: MenuItemProps) {
       <h3 className={styles.name}>{name}</h3>
       <p className={styles.price}>
         <span>&#36;</span>
-        {price}
+        {price.toFixed(2)}
       </p>
     </article>
   );

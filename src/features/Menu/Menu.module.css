@@ -13,7 +13,7 @@
   gap: var(--spacing-300);
 }
 
-@media (min-width: 43rem) {
+@media (min-width: 48rem) {
   .h2 {
     margin-top: var(--spacing-500);
     margin-inline: var(--spacing-500);
@@ -23,7 +23,10 @@
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     column-gap: var(--spacing-300);
     row-gap: var(--spacing-400);
+
+    margin-inline: var(--spacing-500);
   }
 }

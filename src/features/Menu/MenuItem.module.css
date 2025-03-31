@@ -13,6 +13,12 @@
   border-radius: var(--spacing-100);
 }
 
+.activeImg {
+  border-radius: var(--spacing-100);
+  outline: 2px solid var(--color-red);
+  outline-offset: -2px;
+}
+
 .category {
   font-size: var(--font-size-preset4);
   font-weight: var(--font-weight-preset4);
@@ -35,4 +41,13 @@
 
 .price {
   color: var(--color-red);
+}
+
+@media (min-width: 48rem) {
+  .picture,
+  .category,
+  .name,
+  .price {
+    padding-inline: 0;
+  }
 }

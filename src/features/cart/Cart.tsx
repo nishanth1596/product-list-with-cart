@@ -13,9 +13,13 @@ function Cart() {
     .reduce((cur, acc) => cur + acc, 0)
     .toFixed(2);
 
+  const numItems = cartdata
+    .map((item) => item.quantity)
+    .reduce((acc, cur) => acc + cur, 0);
+
   return (
     <section className={styles.container}>
-      <h3 className={styles.h3}>Your Cart (X)</h3>
+      <h3 className={styles.h3}>Your Cart ({numItems})</h3>
 
       <article className={styles.article}>
         {cartdata.length > 0 ? (

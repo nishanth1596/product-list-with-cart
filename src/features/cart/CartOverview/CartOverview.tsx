@@ -1,4 +1,4 @@
-import { CartItem, deleteItem } from "../cartSlice";
+import { CartItem, confirmOrder, deleteItem } from "../cartSlice";
 import styles from "./CartOverview.module.css";
 import carbonNeutralIcon from "../../../assets/images/icon-carbon-neutral.svg";
 
@@ -15,6 +15,10 @@ function CartOverview({ cartItems, amount }: CartOverviewProps) {
 
   function handleDeleteItem(name: string) {
     dispatch(deleteItem(name));
+  }
+
+  function handleConfirmOrder() {
+    dispatch(confirmOrder());
   }
 
   return (
@@ -45,7 +49,9 @@ function CartOverview({ cartItems, amount }: CartOverviewProps) {
         </p>
       </div>
 
-      <button className={styles.btn}>Confirm Order</button>
+      <button onClick={handleConfirmOrder} className={styles.btn}>
+        Confirm Order
+      </button>
     </>
   );
 }

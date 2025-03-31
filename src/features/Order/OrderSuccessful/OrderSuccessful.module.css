@@ -1,0 +1,48 @@
+.container {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.orderConfirmation {
+  margin-top: 95px;
+  background-color: var(--color-white);
+  height: 85vh;
+  overflow: scroll;
+  border-top-left-radius: var(--spacing-150);
+  border-top-right-radius: var(--spacing-150);
+  padding: var(--spacing-500) var(--spacing-300) var(--spacing-300)
+    var(--spacing-300);
+}
+
+.h1 {
+  margin-top: var(--spacing-300);
+  font-size: var(--font-size-preset1);
+  font-weight: var(--font-weight-preset1);
+  line-height: var(--line-height-preset1);
+  color: var(--color-rose-900);
+}
+
+.p {
+  margin-top: var(--spacing-100);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--color-rose-500);
+}
+
+.btn {
+  border: none;
+  width: 100%;
+  margin-top: var(--spacing-400);
+  margin-bottom: var(--spacing-300);
+  background-color: var(--color-red);
+  border-radius: 100px;
+
+  padding: var(--spacing-200) 0;
+
+  color: var(--color-white);
+  font-size: var(--font-size-preset3);
+  font-weight: var(--font-size-preset3);
+  line-height: var(--line-height-preset3);
+}

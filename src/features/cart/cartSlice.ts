@@ -1,7 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
+export type CartImages = {
+  thumbnail: string;
+  mobile: string;
+  tablet: string;
+  desktop: string;
+};
+
 export type CartItem = {
+  image: CartImages;
   name: string;
   quantity: number;
   unitPrice: number;
@@ -10,30 +18,12 @@ export type CartItem = {
 
 type InitialStateProps = {
   cart: CartItem[];
+  orderConfirmed: boolean;
 };
 
 const initialState: InitialStateProps = {
-  // cart: [],
-  cart: [
-    {
-      name: "Classic Tiramisu",
-      quantity: 1,
-      unitPrice: 5.5,
-      unitTotalPrice: 5.5,
-    },
-    {
-      name: "Vanilla Bean Crème Brûlée",
-      quantity: 4,
-      unitPrice: 7,
-      unitTotalPrice: 28,
-    },
-    {
-      name: "Vanilla Panna Cotta",
-      quantity: 2,
-      unitPrice: 6.5,
-      unitTotalPrice: 13,
-    },
-  ],
+  cart: [],
+  orderConfirmed: false,
 };
 
 const cartSlice = createSlice({
@@ -42,6 +32,7 @@ const cartSlice = createSlice({
   reducers: {
     addItem(state, action) {
       const newCartItem: CartItem = {
+        image: action.payload.image,
         name: action.payload.name,
         quantity: 1,
         unitPrice: action.payload.price,
@@ -78,6 +69,14 @@ const cartSlice = createSlice({
         }
       }
     },
+
+    confirmOrder(state) {
+      state.orderConfirmed = true;
+    },
+
+    newOrder() {
+      return initialState;
+    },
   },
 });
 
@@ -87,9 +86,14 @@ export const {
   addItem,
   increaseItemQuantity,
   decreaseItemQuantity,
+  confirmOrder,
+  newOrder,
 } = cartSlice.actions;
 
 export const getCartData = (store: RootState) => store.cart.cart;
 
 export const getQuantity = (name: string) => (store: RootState) =>
   store.cart.cart.find((item) => item.name === name)?.quantity;
+
+export const getIsOrderConfirmed = (store: RootState) =>
+  store.cart.orderConfirmed;

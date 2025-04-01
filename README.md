@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/nishanth1596/product-list-with-cart)
-- Live Site URL: [Live site URL](https://nishanth-product-list-with-cart.netlify.app/)
+- Live Site URL: [Live site URL](https://nishanth-product-list-with-car.netlify.app/)
 
 ### Features
 

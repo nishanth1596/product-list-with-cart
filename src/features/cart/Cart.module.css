@@ -7,6 +7,11 @@
 .h3 {
   padding: var(--spacing-300);
   color: var(--color-red);
+
+  font-size: var(--font-size-preset2);
+  font-weight: var(--font-weight-preset2);
+  line-height: var(--line-height-preset2);
+  color: var(--color-red);
 }
 
 .article {

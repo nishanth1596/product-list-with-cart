@@ -36,7 +36,7 @@ function MenuItem({ menuData, onAddToCart }: MenuItemProps) {
 
   return (
     <article>
-      <picture>
+      <picture className={styles.picture}>
         <source media="(max-width: 767px)" srcSet={mobileImg} />
         <source
           media="(min-width: 768px) and (max-width: 1023px)"
@@ -44,23 +44,21 @@ function MenuItem({ menuData, onAddToCart }: MenuItemProps) {
         />
         <source media="(min-width: 1024px)" srcSet={desktopImg} />
 
-        <div className={styles.picture}>
-          <img
-            src={mobileImg}
-            alt={name}
-            className={isItemAddedtoCart ? styles.activeImg : styles.img}
-          />
+        <img
+          src={mobileImg}
+          alt={name}
+          className={isItemAddedtoCart ? styles.activeImg : styles.img}
+        />
 
-          {isItemAddedtoCart ? (
-            <ChangeQuantityButton
-              name={name}
-              onIncrease={handleIncreaseItemQuantity}
-              onDecrease={handleDecreaseItemQuantity}
-            />
-          ) : (
-            <CartButton onAddToCart={onAddToCart} menuData={menuData} />
-          )}
-        </div>
+        {isItemAddedtoCart ? (
+          <ChangeQuantityButton
+            name={name}
+            onIncrease={handleIncreaseItemQuantity}
+            onDecrease={handleDecreaseItemQuantity}
+          />
+        ) : (
+          <CartButton onAddToCart={onAddToCart} menuData={menuData} />
+        )}
       </picture>
 
       <p className={styles.category}>{category}</p>
